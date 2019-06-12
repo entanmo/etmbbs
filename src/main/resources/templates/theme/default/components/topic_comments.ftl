@@ -8,34 +8,38 @@
         <div class="panel-body">
           <#list comments as comment>
             <div class="media" id="comment${comment.id}" style="padding-left: ${comment.layer * 30}px;">
-              <div class="media-body">
-                <div class="media-heading gray">
-                  <a href="/user/${comment.username}"><img src="${comment.avatar!}" class="avatar avatar-sm" alt=""/></a>
-                  <a href="/user/${comment.username!}">${comment.username!} </a>
-                  <#if topicUser?? && topicUser.id == comment.userId>
-                    <span class="text-success">[楼主]</span>
-                  </#if>
-                  ${model.formatDate(comment.inTime)}
-                  <span class="pull-right">
-                  <#if _user??>
-                    <i id="vote_icon_${comment.id}" class="fa
-                                      <#if model.getUpIds(comment.upIds)?seq_contains('${_user.id}')> fa-thumbs-up <#else> fa-thumbs-o-up </#if>"
-                                      onclick="vote('${comment.id}')"></i>
-                  <#else>
-                    <i id="vote_icon_${comment.id}" class="fa fa-thumbs-o-up" onclick="vote('${comment.id}')"></i>
-                  </#if>
-                  <span id="vote_count_${comment.id}">${model.getUpIds(comment.upIds)?size}</span>&nbsp;
-                  <#if _user??>
-                    <#if _user.id == comment.userId>
-                      <a href="/comment/edit/${comment.id}"><span class="glyphicon glyphicon-edit"></span></a>
-                      <a href="javascript:;" onclick="deleteComment(${comment.id})"><span
-                          class="glyphicon glyphicon-trash"></span></a>
-                    </#if>
-                    <i class="fa fa-reply" onclick="commentThis('${comment.username}', '${comment.id}')"></i>
-                  </#if>
-                  </span>
+              <div class="media-body c-b">
+                <div class="comment-img d-ib f-l">
+                  <a href="/user/${comment.username}"><img src="${comment.avatar!}" class="avatar" alt=""/></a>
                 </div>
-                <div class="comment-detail-content clearfix">${model.formatContent(comment.content)}</div>
+                <div class="comment-box d-ib f-l">
+                  <div class="comment-top">
+                    <a href="/user/${comment.username!}">${comment.username!} </a>
+                    <#if topicUser?? && topicUser.id == comment.userId>
+                      <span class="text-success">[楼主]</span>
+                    </#if>
+                    ${model.formatDate(comment.inTime)}
+                    <span class="pull-right">
+                    <#if _user??>
+                      <i id="vote_icon_${comment.id}" class="fa
+                                        <#if model.getUpIds(comment.upIds)?seq_contains('${_user.id}')> fa-thumbs-up <#else> fa-thumbs-o-up </#if>"
+                                        onclick="vote('${comment.id}')"></i>
+                    <#else>
+                      <i id="vote_icon_${comment.id}" class="fa fa-thumbs-o-up" onclick="vote('${comment.id}')"></i>
+                    </#if>
+                    <span id="vote_count_${comment.id}">${model.getUpIds(comment.upIds)?size}</span>&nbsp;
+                    <#if _user??>
+                      <#if _user.id == comment.userId>
+                        <a href="/comment/edit/${comment.id}"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a href="javascript:;" onclick="deleteComment(${comment.id})"><span
+                            class="glyphicon glyphicon-trash"></span></a>
+                      </#if>
+                      <i class="fa fa-reply" onclick="commentThis('${comment.username}', '${comment.id}')"></i>
+                    </#if>
+                    </span>
+                  </div>
+                  <div class="comment-text">${model.formatContent(comment.content)}</div>
+                </div>
               </div>
             </div>
             <#if comment?has_next>

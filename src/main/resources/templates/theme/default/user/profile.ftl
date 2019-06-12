@@ -2,7 +2,7 @@
 <@html page_title=user.username + " 的个人主页" page_tab="user">
 <div class="row">
   <div class="col-md-9">
-    <div class="panel panel-info">
+    <div class="panel panel-info profile">
       <div class="panel-body">
         <div class="media">
           <div class="media-left">

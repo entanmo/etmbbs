@@ -19,7 +19,7 @@
   <#if (currentPage == 1)>
     <!--<li>上页</li>-->
   <#else>
-    <li><a href="${actionUrl}?pageNo=1${urlParas!}">&lt;&lt;</a></li>
+    <li><a href="${actionUrl}?pageNo=1${urlParas!}">《&nbsp;</a></li>
     <li><a href="${actionUrl}?pageNo=#{currentPage - 1}${urlParas!}">&lt;</a></li>
   </#if>
 
@@ -35,7 +35,7 @@
     <!--<li>下页</li>-->
   <#else>
     <li><a href="${actionUrl}?pageNo=#{currentPage + 1}${urlParas!}">&gt;</a></li>
-    <li><a href="${actionUrl}?pageNo=#{totalPage}${urlParas!}">&gt;&gt;</a></li>
+    <li><a href="${actionUrl}?pageNo=#{totalPage}${urlParas!}">&nbsp;》</a></li>
   </#if>
 </ul>
 </#macro>

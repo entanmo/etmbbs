@@ -41,7 +41,7 @@
                         placeholder="个人简介">${user.bio!?html}</textarea>
             </div>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <div class="checkbox">
                 <label>
@@ -49,13 +49,13 @@
                   有新消息发送邮件
                 </label>
               </div>
-            <#--<div class="checkbox">
+            <div class="checkbox">
               <label>
                 <input type="checkbox" id="telegramNotification"> 有新消息发送Telegram通知
               </label>
-            </div>-->
             </div>
-          </div>
+            </div>
+          </div> -->
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="button" id="settings_btn" class="btn btn-info">提交</button>

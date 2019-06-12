@@ -1,8 +1,8 @@
 <#include "layout/layout.ftl"/>
 <@html page_title="注册" page_tab="register">
 <div class="row">
-  <div class="col-md-3 hidden-xs"></div>
-  <div class="col-md-6">
+  <div class="col-sm-3 col-xs-1"></div>
+  <div class="col-sm-6 col-xs-10">
     <div class="panel panel-info" id="local_register_div">
       <div class="panel-heading">注册</div>
       <div class="panel-body">
@@ -50,7 +50,7 @@
     </div>
     <#include "./components/mobile_login.ftl"/>
   </div>
-  <div class="col-md-3 hidden-xs"></div>
+  <div class="col-sm-3 col-xs-1"></div>
 </div>
 <script>
   $(function () {

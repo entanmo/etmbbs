@@ -79,6 +79,18 @@ public class IndexController extends BaseController {
     model.addAttribute("pageNo", pageNo);
     return render("tag/tags");
   }
+  
+  //news 
+  @GetMapping("/news")
+  public String news() {
+    return render("news");
+  }
+  
+//news 
+  @GetMapping("/jionus")
+  public String jionus() {
+    return render("jionus");
+  }
 
   // 登录
   @GetMapping("/login")

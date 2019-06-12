@@ -2,10 +2,10 @@ body {
   font-family: "Microsoft YaHei UI","Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: #fff;
 }
-footer {
+/* footer {
   background-color: #fff;
   padding: 15px 0;
-}
+} */
 .CodeMirror {
   font-family: "Microsoft YaHei UI","Helvetica Neue",Helvetica,Arial,sans-serif!important;
   border: 1px solid #ddd;
@@ -13,7 +13,7 @@ footer {
 .CodeMirror pre.CodeMirror-placeholder {
   color: #999;
 }
-.wrapper {background-color: #e5e5e5; width: 100%;}
+.wrapper {background-color: #C3CDD4; width: 100%;min-height: 882px;}
 .title{font-size:16px;font-weight:500;padding-bottom:5px}
 .title a:visited{color:#888}
 .nav-pills>li>a{position:relative;display:block;padding:0 5px}
@@ -75,6 +75,10 @@ footer {
   margin-top: 10px;
   overflow: hidden;
   height: 50px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 .payload{width:100%;background-color:#f5f5f5;padding:5px 10px;word-break:break-all;word-wrap:break-word;margin-top:5px;margin-bottom:5px}
 .payload img,.user_comments img{max-width:100%}
@@ -84,9 +88,7 @@ footer {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;}
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-  background-color: #5bc0de;
-}
+
 
 @media (max-width: 768px) {
   .navbar {
@@ -98,7 +100,6 @@ footer {
   }
   .panel {
     border: 0;
-    margin-bottom: 1px;
   }
   .nocomment-tip{
     margin-bottom: 1px;

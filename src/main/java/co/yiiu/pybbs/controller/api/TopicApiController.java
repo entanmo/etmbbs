@@ -1,22 +1,38 @@
 package co.yiiu.pybbs.controller.api;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import co.yiiu.pybbs.exception.ApiAssert;
 import co.yiiu.pybbs.model.Collect;
 import co.yiiu.pybbs.model.Tag;
 import co.yiiu.pybbs.model.Topic;
 import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.model.vo.CommentsByTopic;
-import co.yiiu.pybbs.service.*;
+import co.yiiu.pybbs.service.CollectService;
+import co.yiiu.pybbs.service.CommentService;
+import co.yiiu.pybbs.service.TagService;
+import co.yiiu.pybbs.service.TopicService;
+import co.yiiu.pybbs.service.UserService;
 import co.yiiu.pybbs.util.Result;
 import co.yiiu.pybbs.util.SensitiveWordUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import co.yiiu.pybbs.util.StringUtil;
 
 /**
  * Created by tomoya.
@@ -77,16 +93,16 @@ public class TopicApiController extends BaseApiController {
     ApiAssert.isTrue(user.getActive(), "你的帐号还没有激活，请去个人设置页面激活帐号");
     String title = body.get("title");
     String content = body.get("content");
-//    String tags = body.get("tags");
+    String tags = body.get("tags");
     ApiAssert.notEmpty(title, "请输入标题");
     ApiAssert.isNull(topicService.selectByTitle(title), "话题标题重复");
-//    String[] strings = StringUtils.commaDelimitedListToStringArray(tags);
-//    Set<String> set = StringUtil.removeEmpty(strings);
-//    ApiAssert.notTrue(set.isEmpty() || set.size() > 5, "请输入标签且标签最多5个");
+    String[] strings = StringUtils.commaDelimitedListToStringArray(tags);
+    Set<String> set = StringUtil.removeEmpty(strings);
+    ApiAssert.notTrue(set.size() > 5, "请输入标签且标签最多5个");
     // 保存话题
     // 再次将tag转成逗号隔开的字符串
-//    tags = StringUtils.collectionToCommaDelimitedString(set);
-    Topic topic = topicService.insertTopic(title, content, null, user, session);
+    tags = StringUtils.collectionToCommaDelimitedString(set);
+    Topic topic = topicService.insertTopic(title, content, tags, user, session);
     topic.setContent(SensitiveWordUtil.replaceSensitiveWord(topic.getContent(), "*", SensitiveWordUtil.MinMatchType));
     return success(topic);
   }
@@ -97,17 +113,17 @@ public class TopicApiController extends BaseApiController {
     User user = getApiUser();
     String title = body.get("title");
     String content = body.get("content");
-//    String tags = body.get("tags");
+    String tags = body.get("tags");
     ApiAssert.notEmpty(title, "请输入标题");
-//    String[] strings = StringUtils.commaDelimitedListToStringArray(tags);
-//    Set<String> set = StringUtil.removeEmpty(strings);
-//    ApiAssert.notTrue(set.isEmpty() || set.size() > 5, "请输入标签且标签最多5个");
+    String[] strings = StringUtils.commaDelimitedListToStringArray(tags);
+    Set<String> set = StringUtil.removeEmpty(strings);
+    ApiAssert.notTrue( set.size() > 5, "请输入标签且标签最多5个");
     // 更新话题
     Topic topic = topicService.selectById(id);
     ApiAssert.isTrue(topic.getUserId().equals(user.getId()), "谁给你的权限修改别人的话题的？");
     // 再次将tag转成逗号隔开的字符串
-//    tags = StringUtils.collectionToCommaDelimitedString(set);
-    topic = topicService.updateTopic(topic, title, content, null);
+    tags = StringUtils.collectionToCommaDelimitedString(set);
+    topic = topicService.updateTopic(topic, title, content, tags);
     topic.setContent(SensitiveWordUtil.replaceSensitiveWord(topic.getContent(), "*", SensitiveWordUtil.MinMatchType));
     return success(topic);
   }

@@ -1,8 +1,8 @@
 <#include "layout/layout.ftl"/>
 <@html page_title="登录" page_tab="login">
   <div class="row">
-    <div class="col-md-3 hidden-xs"></div>
-    <div class="col-md-6">
+    <div class="col-sm-3 col-xs-1"></div>
+    <div class="col-sm-6 col-xs-10">
       <div class="panel panel-info" id="local_login_div">
         <div class="panel-heading">登录</div>
         <div class="panel-body">
@@ -49,7 +49,7 @@
       <#include "./components/mobile_login.ftl"/>
       <#include "./components/forget_password.ftl"/>
     </div>
-    <div class="col-md-3 hidden-xs"></div>
+    <div class="col-sm-3 col-xs-1"></div>
   </div>
   <script>
     $(function () {

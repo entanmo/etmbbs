@@ -7,16 +7,20 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>${page_title!}</title>
-  <link rel="icon" href="https://yiiu.co/favicon.ico">
+  <link rel="icon" href="/static/theme/${site.theme}/img/favicon.ico">
   <#--css-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css"/>
+  <link rel="stylesheet" href="/static/theme/${site.theme}/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/static/theme/${site.theme}/css/bootstrap-select.css" />
+  <link rel="stylesheet" href="/static/theme/${site.theme}/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/static/theme/${site.theme}/css/jquery.toast.min.css"/>
+  <link rel="stylesheet" href="/static/theme/${site.theme}/css/base-pc.css" />
   <link rel="stylesheet" href="/static/theme/${site.theme}/css/app.css" />
+  <link rel="stylesheet" href="/static/theme/${site.theme}/css/index.css" />
   <#--javascript-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+  <script src="/static/theme/${site.theme}/js/jquery.min.js"></script>
+  <script src="/static/theme/${site.theme}/js/bootstrap.min.js"></script>
+  <script src="/static/theme/${site.theme}/js/bootstrap-select.js"></script>
+  <script src="/static/theme/${site.theme}/js/jquery.toast.min.js"></script>
 
   <script>
     function toast(txt, icon) {
@@ -37,6 +41,7 @@
 <div class="wrapper">
   <#include "header.ftl"/>
   <@header page_tab=page_tab/>
+  
   <div class="container">
     <#nested />
   </div>
