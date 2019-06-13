@@ -1,5 +1,5 @@
 <#include "layout/layout.ftl"/>
-<@html page_title="关于我们" page_tab="jionus">
+<@html page_title="关于" page_tab="about">
   <!-- banner -->
   <div class="jionus-banner">
     <div class="container p-r">
