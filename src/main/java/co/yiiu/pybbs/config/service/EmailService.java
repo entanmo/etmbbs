@@ -44,6 +44,14 @@ public class EmailService implements BaseService<Session> {
     if (StringUtils.isEmpty(host) || StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) return null;
     Properties properties = new Properties();
     properties.setProperty("mail.host", host);
+    
+    final String smtpPort = "465";
+    properties.setProperty("mail.smtp.port", smtpPort);
+    properties.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+    properties.setProperty("mail.smtp.socketFactory.fallback", "false");
+    properties.setProperty("mail.smtp.socketFactory.port", smtpPort);
+    //properties.setProperty("mail.smtp.port", "465");
+    
     //properties.setProperty("mail.password", "crduhlahjzhvbhjj");
     //是否进行权限验证。
     properties.setProperty("mail.smtp.auth", "true");
