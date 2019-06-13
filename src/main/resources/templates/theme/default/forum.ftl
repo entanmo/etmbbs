@@ -1,12 +1,11 @@
 <#include "layout/layout.ftl"/>
-<@html page_title="首页" page_tab="index">
+<@html page_title="社区" page_tab="forum">
   <!-- <#if active?? && active>
     <div class="alert alert-success">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <strong>激活成功</strong>
     </div>
   </#if> -->
-  
   
   <div class="banner">
     <div class="container p-r">

@@ -48,7 +48,7 @@ public class IndexController extends BaseController {
   private CodeService codeService;
 
   // 首页
-  @GetMapping({"/", "/index", "/index.html"})
+  @GetMapping({"/forum", "/forum.html"})
   public String index(@RequestParam(defaultValue = "all") String tab,
                       @RequestParam(defaultValue = "1") Integer pageNo,
                       Boolean active,
@@ -57,7 +57,7 @@ public class IndexController extends BaseController {
     model.addAttribute("active", active);
     model.addAttribute("pageNo", pageNo);
 
-    return render("index");
+    return render("forum");
   }
 
   @GetMapping("/top100")
@@ -80,16 +80,16 @@ public class IndexController extends BaseController {
     return render("tag/tags");
   }
   
-  //news 
-  @GetMapping("/news")
+  //forum 
+  @GetMapping({"/" , "/home"})
   public String news() {
-    return render("news");
+    return render("home");
   }
   
-//news 
-  @GetMapping("/jionus")
+//about 
+  @GetMapping("/about")
   public String jionus() {
-    return render("jionus");
+    return render("about");
   }
 
   // 登录

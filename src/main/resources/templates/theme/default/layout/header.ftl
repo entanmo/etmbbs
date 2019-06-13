@@ -23,9 +23,9 @@
       </form>
     </#if>
     <ul class="nav navbar-nav navbar-right">
-      <li <#if page_tab == "news">class="active"</#if>><a href="/news"><i class="fa-news"></i> ${i18n.getMessage("news")}</a></li>
-      <li <#if page_tab == "index">class="active"</#if>><a href="/"><i class="fa fa-home"></i> ${i18n.getMessage("forum")}</a></li>
-      <li <#if page_tab == "jionus">class="active"</#if>><a href="/jionus"><i class="fa-jionus"></i> ${i18n.getMessage("jionus")}</a></li>
+      <li <#if page_tab == "home">class="active"</#if>><a href="/"><i class="fa-news"></i> ${i18n.getMessage("Home")}</a></li>
+      <li <#if page_tab == "forum">class="active"</#if>><a href="/forum"><i class="fa fa-home"></i> ${i18n.getMessage("Forum")}</a></li>
+      <li <#if page_tab == "about">class="active"</#if>><a href="/about"><i class="fa-jionus"></i> ${i18n.getMessage("About")}</a></li>
       <li <#if page_tab == "tags">class="active"</#if>><a href="/tags"><i class="fa fa-tags"></i> ${i18n.getMessage("tag")}</a></li>
       <#--<li <#if page_tab == "api">class="active"</#if>><a href="/api">API</a></li>-->
       <#if _user??>

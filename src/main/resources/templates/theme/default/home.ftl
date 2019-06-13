@@ -1,5 +1,5 @@
 <#include "layout/layout.ftl"/>
-<@html page_title="新闻" page_tab="news">
+<@html page_title="首页" page_tab="home">
   <!-- banner -->
 	<div class="news-banner">
     <div class="container p-r">
