@@ -13,10 +13,8 @@
       <img src="/static/theme/${site.theme}/img/banner3-2.png" class="banner-img2 p-a">
       <img src="/static/theme/${site.theme}/img/banner3-3.png" class="banner-img3 p-a">
       <img src="/static/theme/${site.theme}/img/banner3-4.png" class="banner-img4 p-a">
-      <p class="banner-title fw-6">ETM FORUM</p>
-      <p class="banner-text">Through activities, </p>
-      <p class="banner-text">online resources and other enthusiasts </p>
-      <p class="banner-text">of ETM exchange learning</p>
+      <p class="banner-title fw-6">${i18n.getMessage("forum-title")}</p>
+      <p class="banner-text">${i18n.getMessage("forum-subtitle")}</p>
     </div>
   </div>
   

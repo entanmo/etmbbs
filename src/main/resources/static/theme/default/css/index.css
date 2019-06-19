@@ -110,7 +110,7 @@
 
 .banner{height: 600px;width: 1920px;background:#fff;margin: -20px 0 20px 0;position: relative;left: 50%;top: 0;transform: translateX(-50%);}
 .banner .container{height: 100%;}
-.banner .banner-title{font-size: 54px;padding: 70px 0 20px 10px;}
+.banner .banner-title{font-size: 50px;padding: 70px 0 20px 10px;}
 .banner .banner-text{font-size: 20px;line-height: 30px;padding-left:10px;}
 .banner .banner-img1{width: 190px;height: auto;top: 0px;left: 500px;}
 .banner .banner-img2{width: 100px;height: auto;top: 68px;right: 120px;}
@@ -125,7 +125,7 @@
 
 .jionus-banner{height: 600px;width: 1920px;background:#fff;margin: -20px 0 20px 0;position: relative;left: 50%;top: 0;transform: translateX(-50%);}
 .jionus-banner .container{height: 100%;}
-.jionus-banner .jionus-banner-title{font-size: 50px;padding: 60px 0 10px 10px;}
+.jionus-banner .jionus-banner-title{font-size: 50px;padding: 70px 0 20px 10px;}
 .jionus-banner .jionus-banner-text{font-size: 20px;line-height: 30px;padding-left:10px;}
 .jionus-banner .jionus-banner-img{width: 1600px;height: auto;bottom: 30px;right: -170px;}
 
@@ -140,7 +140,7 @@
 
 .new-list{height: 400px;position: relative;}
 .new-list .new-titie{font-size: 28px;margin: 80px 0 30px 100px;}
-.new-list .new-text{font-size: 18px;line-height: 22px;margin: 0 0 0 100px;}
+.new-list .new-text{font-size: 18px;line-height: 26px;margin: 0 70px 0 100px;}
 .new-list .new-img{width: auto;height: 100%;position: relative;top: 0;left: 50%;transform: translateX(-50%);}
 .new-list .new-entrance{margin: 40px 0 0 100px;display: inline-block;}
 .new-list .new-entrance span{display: inline-block;width: 90px;height: 36px;line-height: 35px;color: #fff;font-size: 17px;background: #6EC5C7;text-align: center;font-weight: 600;}
@@ -172,10 +172,10 @@
 .bootstrap-select .dropdown-toggle{color: #333 !important;}
 
 .jionus-box{border-top: 1px solid #D9E0E0;}
-.jionus-box .jionus-list{margin: 0 85px;border-bottom: 1px solid #E3E7E7;text-align: left;}
+.jionus-box .jionus-list{margin: 0 85px;padding: 0 0 35px 0;border-bottom: 1px solid #E3E7E7;text-align: left;}
 .jionus-box .jionus-list:last-of-type{border-bottom: none;margin-bottom: 50px;}
 .jionus-list .jionus-title{font-size: 18px;font-weight: 600;padding: 50px 0 10px 0;}
-.jionus-list .jionus-text{font-size: 17px;line-height: 24px;padding: 0 0 50px 0;}
+.jionus-list .jionus-text{font-size: 17px;line-height: 24px;padding: 0 0 15px 0;}
 
 
 .label-info{background: #88C4CB;}
@@ -243,7 +243,7 @@
   
   .news-banner{height: 540px;width: 992px;}
   .new-list .new-titie{font-size: 26px;margin: 80px 0 30px 40px;}
-  .new-list .new-text{font-size: 18px;line-height: 22px;margin: 0 0 0 40px;}
+  .new-list .new-text{font-size: 18px;line-height: 26px;margin: 0 40px 0 40px;}
   .new-list .new-entrance{margin: 40px 0 0 40px;}
   
   .jionus-banner{height: 540px;width: 992px;}
