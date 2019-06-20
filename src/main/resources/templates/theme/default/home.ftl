@@ -26,7 +26,7 @@
       </div>
       <div class="new-list new-list-even c-b p-r">
         <div class="new-list-left w2 o-h f-l">
-          <img src="/static/theme/${site.theme}/img/img3.png" class="new-img">
+          <img src="/static/theme/${site.theme}/img/img2.jpg" class="new-img">
         </div>
         <div class="new-list-right w2 o-h f-l">
           <p class="new-titie fw-6">${i18n.getMessage("home-h2")}</p>
